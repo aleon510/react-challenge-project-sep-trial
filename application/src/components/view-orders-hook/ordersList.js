@@ -8,8 +8,7 @@ const OrdersList = props => {
 				<h2>There are no orders to display</h2>
 			</div>
 		);
-	const formatDate = () => {
-		const dateObject = new Date();
+	const formatDate = dateObject => {
 		const hour = dateObject.getHours();
 		const minute =
 			dateObject.getMinutes() < 10
@@ -17,14 +16,13 @@ const OrdersList = props => {
 				: dateObject.getMinutes();
 		const second =
 			dateObject.getSeconds() < 10
-				? '0' + dateObject.getSeconds
+				? '0' + dateObject.getSeconds()
 				: dateObject.getSeconds();
 		const time = `${hour}:${minute}:${second}`;
 		return time;
 	};
 	return orders.map(order => {
 		const createdDate = new Date(order.createdAt);
-
 		return (
 			<div className='row view-order-container' key={order._id}>
 				<div className='col-md-4 view-order-left-col p-3'>
