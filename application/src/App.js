@@ -5,13 +5,13 @@ import store from './redux/store';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <AppRouter />
-      </Provider>
-    )
-  }
+	render() {
+		return (
+			<Provider store={store}>
+				<AppRouter />
+			</Provider>
+		);
+	}
 }
 
 export default App;
